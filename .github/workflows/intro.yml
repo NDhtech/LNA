@@ -4,8 +4,8 @@ jobs:
     getserviceversions:
       runs-on: ubuntu-latest
    
-       steps:
-       -name: GitVersion
-        run: git version
-       -name: mavenVersion
-        run: mvn --version
+      steps:
+      -name: GitVersion
+       run: git version
+      -name: mavenVersion
+       run: mvn --version
