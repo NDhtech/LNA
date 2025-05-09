@@ -5,7 +5,7 @@ jobs:
       runs-on: ubuntu-latest
    
       steps:
-      -name: GitVersion
-       run: git version
-      -name: mavenVersion
-       run: mvn --version
+      - name: GitVersion
+        run: git version
+      - name: mavenVersion
+        run: mvn --version
