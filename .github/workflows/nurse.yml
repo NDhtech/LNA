@@ -1,0 +1,10 @@
+name: nurse
+on: push
+jobs:
+    getserviceversions:
+      runs-on: ubuntu-latest
+      steps:
+      - name: GitVersion
+        run: git version
+      - name: mavenversion
+        run: mvn --version
