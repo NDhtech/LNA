@@ -13,6 +13,7 @@ jobs:
     getimage:
       runs-on: ubuntu-latest
 
+      needs: getserviceversions
       steps:
        - name: pullmySQLImg
          run: docker pull mysql
