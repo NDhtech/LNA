@@ -8,4 +8,4 @@ jobs:
        -name: GitVersion
         run: git version
        -name: mavenVersion
-        run: maven --version
+        run: mvn --version
