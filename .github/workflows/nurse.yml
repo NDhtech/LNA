@@ -6,9 +6,9 @@ jobs:
       
       steps:
       - name: GitVersion
-        run: git version
-      - name: mavenversion
-        run: mvn --version
+        run: |
+              git version
+              mvn --version
 
     getimage:
       runs-on: ubuntu-latest
@@ -16,11 +16,8 @@ jobs:
       needs: getserviceversions
       steps:
        - name: pullmySQLImg
-         run: docker pull mysql
-
-       - name: getDockerVersions
-         run: docker --version
-
-       - name: createDockerContainer
-         run: docker run -d --name mcon -e 'MYSQL_ROOT_PASSWORD=1234' mysql
+         run: |
+               docker pull mysql
+               docker --version
+               docker run -d --name mcon -e 'MYSQL_ROOT_PASSWORD=1234' mysql
     
