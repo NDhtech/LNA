@@ -3,8 +3,23 @@ on: push
 jobs:
     getserviceversions:
       runs-on: ubuntu-latest
+      
       steps:
       - name: GitVersion
         run: git version
       - name: mavenversion
         run: mvn --version
+
+    getimage:
+      runs-on: ubuntu-latest
+
+      steps:
+       - name: pullmySQLImg
+         run: docker pull mysql
+
+       - name: getDockerVersions
+         run: docker --version
+
+       - name: createDockerContainer
+         run: docker run -d --name mcon -e 'MYSQL_ROOT_PASSWORD=1234' mysql
+    
