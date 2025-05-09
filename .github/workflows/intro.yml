@@ -1,0 +1,11 @@
+name: intro
+on: push
+jobs:
+    getserviceversions:
+      runs-on: ubuntu-latest
+   
+       steps:
+       -name: GitVersion
+        run: git version
+       -name: mavenVersion
+        run: maven --version
